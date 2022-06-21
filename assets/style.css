@@ -1,0 +1,177 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+:root {
+    --backgroundBodyC: #202b49;
+    --backgroundC: rgb(233, 19, 76); 
+}
+body {
+    background-color: var(--backgroundBodyC);
+    font-size: 30px;
+    font-family: 'VT323', monospace;
+    overflow-x: hidden;
+}
+
+.startGameBtn,.start-screen h1 {
+    background: none;
+    border: none;
+    font-family:'VT323', monospace ;
+    outline: rgb(247, 231, 231) 2px;
+    text-shadow:3px 4px   #ffffff; 
+    text-align: center;
+}
+.curtains {
+   display: flex;
+   width: 100%;
+   height: 100vh;
+   justify-content: center;
+    align-content: center;
+    
+}
+.curtain-right,.curtain-left {
+   width: 100%;
+   float: 50%;
+   background-color: pink
+}
+.curtain-right {
+    display: inline;
+    
+    justify-content: start;
+}
+.curtain-left {
+    display: inline;
+    
+}
+.curtain-right .start-screen-container {
+    transform: translate(-42%);
+}
+.curtain-left .start-screen-container {
+    transform: translate(42%);
+}
+.start-screen-container {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    
+}
+
+.start-screen h1 {
+    font-size: 5rem;
+    z-index: 2;
+}
+
+.startGameBtn {
+    font-size: 4rem;
+    z-index: 2;
+}
+.roshambo-container {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+   
+    height: 100vh;
+ 
+   
+}
+.roshambo-start-screen {
+   /* display:flex;
+    height: 100vh;
+    align-content: center;
+    justify-content: center;*/
+   /* z-index: 100;*/
+}
+.roshambo {
+    width: 100%;
+    display: none;
+    height: 100vh;
+    z-index:0;
+}
+.players-score-container {
+    display:flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    color: white;
+}
+.player-score,.computer-score {
+    text-align: center;
+}
+.computer-shape-img,.player-shape-img {
+    width: 250px;
+    height: 250px;
+    border: white 3px solid;
+    border-radius: 50%;
+}
+.players-chosen-shapes-container {
+    display: flex;
+   justify-content: center;
+   justify-content: space-evenly;
+   margin-bottom: 4rem;  
+}
+.shapes-options-container {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+.shapes-options-container button {
+    padding: 1rem;
+    width: 20%;
+    margin-right: 5px;
+    background-color: var(--backgroundC);
+    border: none;
+}
+.roshambo-winner-container {
+    display: none;
+    width: 30%;
+    height: 70%;
+    padding: 2.5rem;
+    background-color: rgb(33, 33, 33);
+    justify-content: center;
+    align-content: center;
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    z-index: 1;
+    border-radius: 10%;
+}
+.final-score {
+    display: flex;
+    justify-content: space-between;
+}
+.final-score div {
+    display: flex;
+}
+.final-computer-score-container,.final-player-score-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 1.5rem;
+}
+
+
+/* class list*/
+.open-left {
+    transform: translate(-100%);
+    transition: 2s;
+}
+.open-right {
+    transform: translate(100%);
+    transition: 2s;
+}
+.close-right {
+    transform: translate(0%);
+    transition: 10s;
+}
+.close-left {
+    transform: translate(0%);
+    transition: 10s
+}
+.addBlur {
+    filter: blur(2px);
+}
