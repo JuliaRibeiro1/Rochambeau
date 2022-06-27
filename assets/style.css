@@ -10,81 +10,105 @@ body {
     background-color: var(--backgroundBodyC);
     font-size: 30px;
     font-family: 'VT323', monospace;
-    overflow-x: hidden;
+    
+    
 }
 
-.startGameBtn,.start-screen h1 {
+.start-screen-container,.startGameBtn {
     background: none;
     border: none;
     font-family:'VT323', monospace ;
-    outline: rgb(247, 231, 231) 2px;
-    text-shadow:3px 4px   #ffffff; 
+    text-shadow:3px 5px   #8196dd; 
     text-align: center;
+    background-color: none;
+    background: none;
+}
+.start-screen-container h1 {
+    color: var(--backgroundBodyC);
+    font-size: 90px
+}
+.curtain-left h1  {
+    margin-right: 40px
+}
+
+.curtain-right h1  {
+    z-index: 999;
+    margin-left: 3.8rem
+}
+
+.curtain-left .startGameBtn  {
+    margin-right: 3rem
+}
+.curtain-right .startGameBtn  {
+    margin-left:3rem
 }
 .curtains {
    display: flex;
    width: 100%;
    height: 100vh;
    justify-content: center;
-    align-content: center;
-    
+   align-content: center;
+   position: absolute;
+   z-index:1;
 }
 .curtain-right,.curtain-left {
    width: 100%;
    float: 50%;
-   background-color: pink
+   background-color:white;
 }
 .curtain-right {
     display: inline;
-    
-    justify-content: start;
+    justify-content: center;
 }
 .curtain-left {
     display: inline;
-    
+    z-index: 2;
 }
 .curtain-right .start-screen-container {
-    transform: translate(-42%);
+  /*  transform: translate(-42%);*/
+    top: 50%;
+    left: 50%;
+    height: 100%;
+    width: 100px;
+    transform: translate(10%);
 }
 .curtain-left .start-screen-container {
-    transform: translate(42%);
+   /* transform: translate(42%);*/
+    top: 50%;
+    left: 50%;
+    height: 100%;
+    /*margin-right: 60px;*/
+    transform: translate(45%)
+}
+.curtain-left .startGameBtn{
+    margin-right:50px ;
 }
 .start-screen-container {
     display: flex;
     justify-content: center;
     flex-direction: column;
-    align-items: center;
-    
+    align-items: center;  
 }
 
 .start-screen h1 {
-    font-size: 5rem;
     z-index: 2;
 }
-
 .startGameBtn {
     font-size: 4rem;
-    z-index: 2;
+    color: var(--backgroundC);
+    margin-left: 2.5rem;
 }
 .roshambo-container {
     display: flex;
     justify-content: center;
     align-content: center;
-   
     height: 100vh;
- 
-   
-}
-.roshambo-start-screen {
-   /* display:flex;
-    height: 100vh;
-    align-content: center;
-    justify-content: center;*/
-   /* z-index: 100;*/
+    position: relative;
+    overflow-x: hidden;
+    overflow-y: hidden;
 }
 .roshambo {
     width: 100%;
-    display: none;
     height: 100vh;
     z-index:0;
 }
@@ -126,7 +150,7 @@ body {
 .roshambo-winner-container {
     display: none;
     width: 30%;
-    height: 70%;
+    height: 60%;
     padding: 2.5rem;
     background-color: rgb(33, 33, 33);
     justify-content: center;
@@ -140,6 +164,12 @@ body {
     z-index: 1;
     border-radius: 10%;
 }
+.roshambo-winner {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
 .final-score {
     display: flex;
     justify-content: space-between;
@@ -149,29 +179,113 @@ body {
 }
 .final-computer-score-container,.final-player-score-container {
     display: flex;
+    width: 150px;
     flex-direction: column;
     align-items: center;
     margin-top: 1.5rem;
+    justify-content: space-around;
 }
-
-
 /* class list*/
-.open-left {
-    transform: translate(-100%);
-    transition: 2s;
-}
-.open-right {
-    transform: translate(100%);
-    transition: 2s;
-}
-.close-right {
-    transform: translate(0%);
-    transition: 10s;
-}
-.close-left {
-    transform: translate(0%);
-    transition: 10s
-}
 .addBlur {
     filter: blur(2px);
 }
+@media (max-width:500px) {
+    .roshambo {
+        overflow-y: hidden;
+    }
+    .players-score-container {
+      font-size: 20px;
+      margin-bottom: 0;
+     }
+    .players-chosen-shapes-container {
+        margin-top:0;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        margin-bottom: 1em;
+        height: 60%;
+    }
+    .computer-shape-img,.player-shape-img {
+       width: 150px;
+       height: 150px;
+       margin-bottom: 0;
+    }
+    .computer-score,.player-score {
+        font-size: 2.5rem;
+    }
+    .player-shape-img {
+        margin-top: 100px;
+    }
+    .shapes-options-container {
+        position: relative;
+        top: -36%;
+        left: 50%;
+        z-index: 2;
+        transform: translate(-50%, -10%);
+    }
+    .shapes-options-container button {
+        width: 25%;
+    }
+    .roshambo-winner-container {
+        width: 75%;
+    }
+   .curtain-right .start-screen-container {
+        top: 50%;
+        left: 50%;
+        height: 100%;
+        width: 50px;
+        transform: translate(50%);
+      }
+      .curtain-left .start-screen-container {
+        transform: translate(42%);
+        top: 50%;
+        left: 50%;
+        height: 100%;
+        width: 100px;
+        transform: translate(50%)
+      } 
+      .curtain-right .start-screen-container h1 {
+          transform: translate(0px);
+      }
+      .curtain-left .start-screen-container h1 {
+          transform: translate(60px)
+      }  
+      .curtain-right .start-screen-container .startGameBtn {
+        transform: translate(5px)
+    } 
+    .curtain-left .start-screen-container .startGameBtn {
+        transform: translate(40px)
+    }  
+    }
+    @media (max-width:400px) {
+    .curtain-right .start-screen-container h1 {
+            transform: translate(5px);
+    }
+    .curtain-left .start-screen-container h1 {
+            transform: translate(60px)
+    }  
+    }
+    @media (max-width:380px) {
+        .curtain-right .start-screen-container h1 {
+                transform: translate(20px);
+        }
+        .curtain-left .start-screen-container h1 {
+                transform: translate(60px)
+        } 
+        .curtain-right .start-screen-container {
+            top: 50%;
+            left: 50%;
+            height: 100%;
+            width: 50px;
+            transform: translate(20%);
+          }
+          .curtain-left .start-screen-container {
+            transform: translate(42%);
+            top: 50%;
+            left: 50%;
+            height: 100%;
+            width: 100px;
+            transform: translate(30%)
+          }  
+        }
