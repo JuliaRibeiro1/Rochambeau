@@ -9,11 +9,8 @@
 body {
     background-color: var(--backgroundBodyC);
     font-size: 30px;
-    font-family: 'VT323', monospace;
-    
-    
+    font-family: 'VT323', monospace;  
 }
-
 .start-screen-container,.startGameBtn {
     background: none;
     border: none;
@@ -30,12 +27,10 @@ body {
 .curtain-left h1  {
     margin-right: 40px
 }
-
 .curtain-right h1  {
     z-index: 999;
     margin-left: 3.8rem
 }
-
 .curtain-left .startGameBtn  {
     margin-right: 3rem
 }
@@ -65,7 +60,6 @@ body {
     z-index: 2;
 }
 .curtain-right .start-screen-container {
-  /*  transform: translate(-42%);*/
     top: 50%;
     left: 50%;
     height: 100%;
@@ -73,11 +67,9 @@ body {
     transform: translate(10%);
 }
 .curtain-left .start-screen-container {
-   /* transform: translate(42%);*/
     top: 50%;
     left: 50%;
     height: 100%;
-    /*margin-right: 60px;*/
     transform: translate(45%)
 }
 .curtain-left .startGameBtn{
@@ -235,57 +227,25 @@ body {
         left: 50%;
         height: 100%;
         width: 50px;
-        transform: translate(50%);
+        transform: translateX(20%)
       }
       .curtain-left .start-screen-container {
-        transform: translate(42%);
         top: 50%;
         left: 50%;
         height: 100%;
         width: 100px;
-        transform: translate(50%)
-      } 
-      .curtain-right .start-screen-container h1 {
-          transform: translate(0px);
-      }
-      .curtain-left .start-screen-container h1 {
-          transform: translate(60px)
-      }  
-      .curtain-right .start-screen-container .startGameBtn {
-        transform: translate(5px)
-    } 
-    .curtain-left .start-screen-container .startGameBtn {
-        transform: translate(40px)
-    }  
-    }
-    @media (max-width:400px) {
+        transform: translateX(100%)
+     }}
+@media (max-width:390px) {
     .curtain-right .start-screen-container h1 {
-            transform: translate(5px);
+        transform: translateX(0%);
     }
     .curtain-left .start-screen-container h1 {
-            transform: translate(60px)
-    }  
-    }
-    @media (max-width:380px) {
-        .curtain-right .start-screen-container h1 {
-                transform: translate(20px);
-        }
-        .curtain-left .start-screen-container h1 {
-                transform: translate(60px)
-        } 
-        .curtain-right .start-screen-container {
-            top: 50%;
-            left: 50%;
-            height: 100%;
-            width: 50px;
-            transform: translate(20%);
-          }
-          .curtain-left .start-screen-container {
-            transform: translate(42%);
-            top: 50%;
-            left: 50%;
-            height: 100%;
-            width: 100px;
-            transform: translate(30%)
-          }  
-        }
+        transform: translateX(-10%)
+    } 
+    .curtain-right .start-screen-container .startGameBtn {
+        transform: translateX(20%)
+    } 
+    .curtain-left .start-screen-container .startGameBtn {
+        transform: translateX(-20%)
+    }}

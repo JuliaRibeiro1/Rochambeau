@@ -32,7 +32,7 @@ let finalComputerScoreContainer = document.querySelector(".final-computer-score-
 const roshambo = document.querySelector(".roshambo")
 
 //selecting images
-const shapesOptionsArr = Array.from(shapesOptions).map(buttonText => buttonText.addEventListener("click",function checkingClick(e){  
+const shapesOptionsArr = Array.from(shapesOptions).map(buttonText => buttonText.addEventListener("click",function checkingClick(e){ 
    let chosenShape = e.target.textContent
         playerShapeImg.setAttribute("src",obj[chosenShape].img);
  
@@ -78,6 +78,7 @@ if(playerScoreCounter == 3) {
     finalPlayerScoreContainer.style.color = "green"
     setTimeout(closeCurtains,4000) 
     buttonText.removeEventListener("click",checkingClick)
+    setTimeout(addEvent,4000)
 }
 else if(computerScoreCounter == 3) {
     winnerContainer.style.display = "flex"
@@ -87,11 +88,13 @@ else if(computerScoreCounter == 3) {
     finalPlayerScoreContainer.style.color = "red"
     setTimeout(closeCurtains,4000) 
     buttonText.removeEventListener("click",checkingClick)
-} 
-if(buttonText.removeEventListener) {
-    buttonText.addEventListener("click",checkingClick)
-    console.log("Oi")
+    setTimeout(addEvent,4000)
 }
+
+function addEvent () {
+    buttonText.addEventListener("click",checkingClick)
+}
+
 }))
 // functions
 function finalScore() {
@@ -128,7 +131,7 @@ function restartGame() {
     roshambo.classList.remove("addBlur")
     playerShapeImg.removeAttribute("src")
     computerShapeImg.removeAttribute("src")
-
+    
 }
 startBtn.addEventListener("click",() => {
 let openCurtains = (setTimeout(function(){
